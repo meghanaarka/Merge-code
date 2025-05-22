@@ -20,6 +20,7 @@ void loop()
   if (digitalWrite(A0) > 500) 
       {  
     Serial.print("Smoke detected");
+(digitalWrite(3)==HIGH);
   }
 
   if (digitalWrite(2)== HIGH) {
