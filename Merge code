@@ -1,0 +1,31 @@
+const int smokePin = A0;  // Smoke sensor pin
+const int irPin = 2;
+const int buzzer=3;// for alert 
+     
+
+void setup() {
+pinMode(A0, INPUT);
+pinMode(2, INPUT); 
+pinMode(3, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop()
+ {
+  Serial.print("Smoke Value: ");
+  Serial.println(smokeValue);
+  Serial.print("IR Value: ");
+  Serial.println(irValue);
+
+  if (digitalWrite(A0) > 500) 
+      {  
+    Serial.print("Smoke detected");
+  }
+
+  if (digitalWrite(2)== HIGH) {
+    Serial.print("Motion detected");
+    digitalWrite (3,HIGH);
+  delay(1000);
+}
+
+}
